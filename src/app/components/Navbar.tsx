@@ -37,9 +37,10 @@ const Navbar = async () => {
     });
 
     return (
-        <nav className="w-full bg-white border-b border-gray-200">
+        <nav className="w-full bg-white border-b mt-2 border-gray-200">
 
             {/* TOP NAVBAR */}
+            
             <div className="max-w-7xl mx-auto">
 
                 <div className="max-w-[1020px] mx-auto h-[66px] sm:h-[70px] px-3 sm:px-4 flex items-center justify-between">
@@ -81,7 +82,7 @@ const Navbar = async () => {
             </div>
 
             {/* CATEGORY BAR */}
-            <div className="border-t border-gray-200">
+            <div >
 
                 <div className="max-w-[1020px] mx-auto">
 
@@ -90,6 +91,10 @@ const Navbar = async () => {
                 </div>
 
             </div>
+
+
+
+
 
         </nav>
     );
