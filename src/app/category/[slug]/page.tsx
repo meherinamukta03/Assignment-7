@@ -1,7 +1,8 @@
 
 
 
-import { ProductGrid } from "@/app/components/ProductGrid";
+
+import ProductGrid from "@/app/components/ProductGrid";
 import React from "react";
 
 type Category = {
