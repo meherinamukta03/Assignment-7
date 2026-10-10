@@ -18,7 +18,8 @@ const CategoryLinks = ({ categories }: CategoryLinksProps) => {
     const pathname = usePathname();
 
     return (
-        <nav className="h-[40px] px-3 sm:px-4 flex items-center justify-start gap-4 sm:gap-6 lg:gap-[30px] overflow-x-auto whitespace-nowrap scrollbar-hide">
+        <section className="w-full border-t border-gray-200 bg-white">
+<nav className="mx-auto flex h-[40px] w-full items-center justify-start gap-4 overflow-x-auto whitespace-nowrap px-3 sm:gap-6 sm:px-4 lg:gap-[30px] scrollbar-hide">
             {categories.map((category) => {
                 const isActive = pathname === `/category/${category.slug}`;
 
@@ -34,7 +35,7 @@ const CategoryLinks = ({ categories }: CategoryLinksProps) => {
                     </Link>
                 );
             })}
-        </nav>
+        </nav></section>
     );
 };
 

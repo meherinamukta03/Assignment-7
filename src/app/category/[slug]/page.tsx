@@ -1,10 +1,8 @@
 
 
 
-
 import ProductGrid from "@/app/components/ProductGrid";
-import React from "react";
-
+import type { Product } from "@/app/components/ProductCard";
 type Category = {
     id: string;
     slug: string;
