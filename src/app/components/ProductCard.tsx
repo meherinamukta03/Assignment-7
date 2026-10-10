@@ -16,6 +16,20 @@ export type Product = {
 interface ProductCardProps {
     product: Product;
 }
+function getUnitText(unit: string) {
+    switch (unit) {
+        case "kg":
+            return "কেজি";
+        case "litre":
+            return "লিটার";
+        case "dozen":
+            return "ডজন";
+        case "pcs":
+            return "পিস";
+        default:
+            return unit;
+    }
+}
 
 export default function ProductCard({ product }: ProductCardProps) {
     const changeType =
@@ -38,7 +52,7 @@ export default function ProductCard({ product }: ProductCardProps) {
                     </h2>
 
                     <p className="mt-0.5 text-[11px] text-gray-500 sm:text-xs">
-                        প্রতি {product.unit}
+                        প্রতি {getUnitText(product.unit)}
                     </p>
                 </div>
             </div>

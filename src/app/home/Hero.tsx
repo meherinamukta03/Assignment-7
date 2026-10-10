@@ -18,7 +18,7 @@ export default function Hero() {
 
 
     return (
-      <section className="mx-auto w-full max-w-[1020px] px-4 py-5 md:py-8">
+      <section className="mx-auto w-full px-4 py-5 md:py-8">
             <div className=" flex flex-col items-center justify-between gap-8 overflow-hidden rounded-2xl border border-gray-100 bg-[#F8FAF7] p-5 sm:p-8 md:flex-row md:p-10 lg:p-12">
 
                 {/* Left Content */}

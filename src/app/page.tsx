@@ -1,7 +1,10 @@
 import Image from "next/image";
 import Hero from "./home/Hero";
 import ProductCard from "./components/ProductCard";
-
+import PriceIncreased from "./home/PriceIncreased";
+import { FiArrowUp, } from "react-icons/fi";
+import { FiArrowDown } from "react-icons/fi";
+import PriceDecresed from "./home/PriceDecresed";
 
 interface Product {
     id: number;
@@ -24,33 +27,68 @@ async function getProducts(): Promise<Product[]> {
     if (!res.ok) {
         throw new Error("Failed to fetch products");
     }
-const data=await res.json()
-return data
+    const data = await res.json()
+    return data
 }
 
 
 export default async function Home() {
-     const products = await getProducts();
-  return (
-   <div>
+    const products = await getProducts();
+    return (
+        <div className="mx-auto w-full max-w-6xl px-4 sm:px-6">
 
-    <Hero></Hero>
+            <Hero />
+
+            {/* দাম বেড়েছে */}
+            <section id="দাম বেড়েছে" className="scroll-mt-20 mt-8">
+                <div className="mb-4 flex items-center gap-2">
+                    <FiArrowUp className="shrink-0 text-red-500" size={25} />
+
+                    <h2 className="text-2xl font-bold leading-tight tracking-tight text-[#1A1A1A]">
+                        আজ দাম বেড়েছে
+                    </h2>
+                </div>
+
+                <PriceIncreased products={products} />
+            </section>
+
+            <section id="দাম-কমেছে" className="scroll-mt-20 mt-8">
+                <div className="mb-4 flex items-center gap-2">
+                    <FiArrowDown className="shrink-0 text-emerald-600" size={25} />
+
+                    <h2 className="text-2xl font-bold leading-tight tracking-tight text-[#1A1A1A]">
+                        আজ দাম কমেছে
+                    </h2>
+                </div>
+
+                <PriceDecresed products={products} />
+            </section>
 
 
 
 
 
 
+            {/* সব পণ্য */}
+            <section id="সব-পণ্য" className="scroll-mt-20 mt-8 w-full">
+                <h2 className="text-2xl font-bold leading-tight tracking-tight text-[#1A1A1A]">
+                    সব পণ্য
+                </h2>
 
-    <section id="সব-পণ্য" className="scroll-mt-20 mx-auto w-full max-w-[1020px]">
-    <h2 className="text-2xl font-bold leading-tight tracking-tight text-[#1A1A1A] sm:text-1xl lg:text-2xl">সব পণ্য</h2>
-    <p className=" mt-3 leading-relaxed text-gray-600 sm:text-base md:text-lg"> মোট {products.length} পণ্য দেখানো হচ্ছে</p>
-    <div className="mt-3 mx-auto w-full max-w-[1020px] grid grid-cols-1 gap-3.5 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3">
+                <p className="mt-3 leading-relaxed text-gray-600 sm:text-base md:text-lg">
+                    মোট {products.length} পণ্য দেখানো হচ্ছে
+                </p>
 
+                <div className="mt-3 grid w-full grid-cols-1 gap-3.5 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3">
+                    {products.map((product) => (
+                        <ProductCard
+                            key={product.id}
+                            product={product}
+                        />
+                    ))}
+                </div>
+            </section>
 
-      {products.map(product=><ProductCard key={product.id} product={product}></ProductCard>)}
-    </div>
-</section>
-   </div>
-  );
+        </div>
+    );
 }
