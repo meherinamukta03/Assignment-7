@@ -1,10 +1,12 @@
 import Image from "next/image";
 import Hero from "./home/Hero";
 import ProductCard from "./components/ProductCard";
+
 import PriceIncreased from "./home/PriceIncreased";
-import { FiArrowUp, } from "react-icons/fi";
-import { FiArrowDown } from "react-icons/fi";
+// import { FiArrowUp, } from "react-icons/fi";
+// import { FiArrowDown } from "react-icons/fi";
 import PriceDecresed from "./home/PriceDecresed";
+import { FaCaretUp, FaCaretDown } from "react-icons/fa";
 
 interface Product {
     id: number;
@@ -17,6 +19,7 @@ interface Product {
         dir: "up" | "down" | "flat";
         pct: number;
     };
+    slug: string;
 }
 
 async function getProducts(): Promise<Product[]> {
@@ -42,7 +45,8 @@ export default async function Home() {
             {/* দাম বেড়েছে */}
             <section id="দাম বেড়েছে" className="scroll-mt-20 mt-8">
                 <div className="mb-4 flex items-center gap-2">
-                    <FiArrowUp className="shrink-0 text-red-500" size={25} />
+                    <FaCaretUp className="text-red-500
+                    shrink-0 text-2xl size={30} "/>
 
                     <h2 className="text-2xl font-bold leading-tight tracking-tight text-[#1A1A1A]">
                         আজ দাম বেড়েছে
@@ -54,7 +58,7 @@ export default async function Home() {
 
             <section id="দাম-কমেছে" className="scroll-mt-20 mt-8">
                 <div className="mb-4 flex items-center gap-2">
-                    <FiArrowDown className="shrink-0 text-emerald-600" size={25} />
+                    <FaCaretDown className="text-green-500 text-3xl shrink-0 size={40}" />
 
                     <h2 className="text-2xl font-bold leading-tight tracking-tight text-[#1A1A1A]">
                         আজ দাম কমেছে

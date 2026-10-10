@@ -1,8 +1,13 @@
 import React from "react";
-import { FiArrowUp, FiArrowDown, FiMinus } from "react-icons/fi";
+import Link from "next/link";
+import {
 
+    FiMinus,
+} from "react-icons/fi";
+import { FaCaretUp, FaCaretDown } from "react-icons/fa";
 export type Product = {
     id: string | number;
+    slug: string;
     nameBn: string;
     unit: string;
     today: number;
@@ -16,6 +21,7 @@ export type Product = {
 interface ProductCardProps {
     product: Product;
 }
+
 function getUnitText(unit: string) {
     switch (unit) {
         case "kg":
@@ -40,7 +46,10 @@ export default function ProductCard({ product }: ProductCardProps) {
                 : "neutral";
 
     return (
-        <div className="flex flex-col justify-between rounded-2xl border border-gray-100 bg-white p-4 shadow-sm transition-shadow hover:shadow-md sm:p-5">
+        <Link
+            href={`/products/${product?.slug}`}
+            className="block rounded-2xl border border-gray-100 bg-white p-4 shadow-sm transition-all hover:border-green-500 hover:shadow-md sm:p-5"
+        >
             <div className="flex items-start gap-3">
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gray-100 text-lg">
                     <span>{product.image}</span>
@@ -76,7 +85,7 @@ export default function ProductCard({ product }: ProductCardProps) {
 
                 {changeType === "up" && (
                     <div className="flex items-center gap-1 rounded-md bg-red-50 px-2 py-1 text-[10px] font-bold text-red-600 sm:text-xs">
-                        <FiArrowUp />
+                        <FaCaretUp className="text-red-500" />
                         <span>
                             {Math.abs(product.change.pct).toLocaleString("bn-BD")}%
                         </span>
@@ -85,7 +94,7 @@ export default function ProductCard({ product }: ProductCardProps) {
 
                 {changeType === "down" && (
                     <div className="flex items-center gap-1 rounded-md bg-emerald-50 px-2 py-1 text-[10px] font-bold text-emerald-600 sm:text-xs">
-                        <FiArrowDown />
+                        <FaCaretDown className="text-green-500" />
                         <span>
                             {Math.abs(product.change.pct).toLocaleString("bn-BD")}%
                         </span>
@@ -96,11 +105,14 @@ export default function ProductCard({ product }: ProductCardProps) {
                     <div className="flex items-center gap-1 rounded-md bg-gray-100 px-2 py-1 text-[10px] font-bold text-gray-600 sm:text-xs">
                         <FiMinus />
                         <span>
-                            {product.change.pct.toLocaleString("bn-BD")}%
+                            {Math.abs(product.change.pct).toLocaleString("bn-BD", {
+                                minimumFractionDigits: 1,
+                                maximumFractionDigits: 1,
+                            })}%
                         </span>
                     </div>
                 )}
             </div>
-        </div>
+        </Link>
     );
 }
