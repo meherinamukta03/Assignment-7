@@ -7,7 +7,7 @@ import { authClient } from "@/lib/auth-client";
 import toast from "react-hot-toast";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
-
+import { useSearchParams } from "next/navigation";
 
 
 
@@ -23,6 +23,8 @@ import {
 } from "@heroui/react";
 
 const SignInPage = () => {
+    const searchParams = useSearchParams();
+const callbackURL = searchParams.get("callbackURL") || "/";
     const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
@@ -37,7 +39,7 @@ const SignInPage = () => {
             const { data, error } = await authClient.signIn.email({
                 email: user.email,
                 password: user.password,
-                callbackURL: "/",
+               callbackURL: callbackURL,
             });
 
             if (error) {
@@ -61,7 +63,7 @@ const SignInPage = () => {
         try {
             const { data, error } = await authClient.signIn.social({
                 provider,
-                callbackURL: "/",
+                callbackURL: callbackURL,
             });
 
             if (error) {
