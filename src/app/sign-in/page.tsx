@@ -44,7 +44,7 @@ const callbackURL = searchParams.get("callbackURL") || "/";
 
             if (error) {
                 toast.error(error.message || "সাইন ইন করা যায়নি!");
-                console.log(error);
+               // console.log(error);
                 return;
             }
 
