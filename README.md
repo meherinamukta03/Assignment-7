@@ -1,19 +1,18 @@
-
+**
 # 🛒 বাজার দর | BazarDor
 
 ## 📌 Project Description
 
-**বাজার দর (BazarDor)** is a responsive web application that helps users check the prices of essential daily products in Bangladesh. Users can browse products by category, compare prices across different markets, and easily understand price changes.
+**বাজার দর (BazarDor)** is a responsive web application that helps users check the prices of essential daily products in Bangladesh. Users can browse products by category, compare prices across different markets, and understand price changes easily.
 
-The application also provides user authentication and profile management, allowing users to securely sign in and update their profile information.
+The application also includes user authentication and profile management features.
 
 ## 🛠️ Technologies Used
 
 | Technology | Purpose |
 |---|---|
 | Next.js | Building the web application |
-
-| React | Building reusable UI components |
+| React | Creating reusable UI components |
 | TypeScript | Writing type-safe code |
 | Tailwind CSS | Styling and responsive design |
 | HeroUI | Building user interface components |
@@ -29,26 +28,26 @@ The application also provides user authentication and profile management, allowi
 - Show prices using Bengali numerals for easier understanding.
 
 ### 2. 📈 Price Increase and Decrease
-- View the top six products with increased prices.
-- View the top six products with decreased prices.
-- Identify price changes using visual indicators and percentage badges.
+- View products with increased prices.
+- View products with decreased prices.
+- Identify price changes using visual indicators.
 
 ### 3. 🛍️ Product Details and Market Comparison
 - View detailed information about individual products.
 - Compare product prices across different markets.
-- Display minimum, maximum, and average prices.
+- Check price information for individual products.
 
 ### 4. 🗂️ Category Browsing and Price Sorting
 - Browse products by category.
-- Sort products by default order.
+- Sort products using the default order.
 - Sort prices from lowest to highest.
 - Sort prices from highest to lowest.
-- Correctly sort Bengali numerals according to their numeric values.
+- Sort Bengali numerals according to their numeric values.
 
 ### 5. 🔐 Authentication and Profile Management
 - Register and sign in using email and password.
 - Sign in using Google and GitHub.
-- Access a protected profile page.
+- Access protected pages after signing in.
 - Update profile information, including the user's name.
 - Receive success and error notifications.
 
@@ -57,8 +56,8 @@ The application also provides user authentication and profile management, allowi
 - Responsive layouts for mobile, tablet, and desktop devices.
 - User-friendly navigation and category links.
 - Clean product cards and price comparison sections.
-- Loading skeletons and friendly error messages.
-- Custom 404 page with navigation back to the home page.
+- Loading indicators and error messages.
+- Custom 404 page with navigation to the home page.
 
 ## ⚙️ Installation and Setup
 
@@ -68,18 +67,18 @@ The application also provides user authentication and profile management, allowi
 - npm
 - MongoDB database
 - Better Auth configuration
-- Google and GitHub OAuth credentials (for social authentication)
+- Google and GitHub OAuth credentials for social authentication
 
 ### 1. Clone the Repository
 
 ```bash
-git clone YOUR_GITHUB_REPOSITORY_URL
+git clone https://github.com/meherinamukta03/Assignment-7.git
 ```
 
 ### 2. Navigate to the Project Directory
 
 ```bash
-cd YOUR_PROJECT_FOLDER
+cd Assignment-7
 ```
 
 ### 3. Install Dependencies
@@ -90,7 +89,7 @@ npm install
 
 ### 4. Configure Environment Variables
 
-Create a `.env.local` file in the root directory and configure the required environment variables.
+Create a `.env.local` file in the root directory and add the environment variables required by your project.
 
 Example:
 
@@ -104,7 +103,7 @@ GITHUB_CLIENT_ID=your_github_client_id
 GITHUB_CLIENT_SECRET=your_github_client_secret
 ```
 
-Replace the example values with your actual configuration.
+Replace the example values with your actual credentials. Make sure the variable names match your project configuration.
 
 **Important:** Never commit `.env.local` or expose secret keys in your GitHub repository.
 
@@ -120,18 +119,17 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 The application is deployed on Vercel.
 
-Before deployment, configure all required environment variables in the deployment platform and verify authentication, product details, profile updates, and dynamic routes.
+**Live Website:**  
+[https://assignment-7-git-main-mmm-6442.vercel.app/](https://assignment-7-git-main-mmm-6442.vercel.app/)
 
-## 🌐 Live Link
+## 🌐 Project Links
 
-[Visit BazarDor](https://assignment-7-git-main-mmm-6442.vercel.app/)
-
-## 📂 GitHub Repository
-
-YOUR_GITHUB_REPOSITORY_URL
+- **Live Website:** [Visit BazarDor](https://assignment-7-git-main-mmm-6442.vercel.app/)
+- **GitHub Repository:** [View Source Code](https://github.com/meherinamukta03/Assignment-7)
 
 ## 👩‍💻 Author
 
 **Meherina Mukta**
 
 Project: **বাজার দর | BazarDor**
+**
