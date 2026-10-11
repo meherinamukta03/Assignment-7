@@ -12,7 +12,7 @@ The application also provides user authentication and profile management, allowi
 | Technology | Purpose |
 |---|---|
 | Next.js | Building the web application |
-| Next.js App Router | Managing pages and navigation |
+
 | React | Building reusable UI components |
 | TypeScript | Writing type-safe code |
 | Tailwind CSS | Styling and responsive design |
