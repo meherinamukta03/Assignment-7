@@ -14,10 +14,15 @@ const db = client.db("bazar-dor");
 
 export const auth = betterAuth({
   baseURL: process.env.BETTER_AUTH_URL,
+ 
+
   trustedOrigins: [
     "http://localhost:3000",
-    process.env.BETTER_AUTH_URL!,
+    "https://assignment-7-git-main-mmm-6442.vercel.app",
   ],
+
+
+
   database: mongodbAdapter(db, {
     client,
   }),
