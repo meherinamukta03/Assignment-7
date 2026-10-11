@@ -54,10 +54,10 @@ const SignUpPage = () => {
             });
 
             if (error) {
-                console.error("Sign Up Error:", error);
-                console.error("Error Message:", error.message);
-                console.error("Error Status:", error.status);
-                console.error("Error Code:", error.code);
+                // console.error("Sign Up Error:", error);
+                // console.error("Error Message:", error.message);
+                // console.error("Error Status:", error.status);
+                // console.error("Error Code:", error.code);
 
                 toast.error(
                     error.message || "অ্যাকাউন্ট তৈরি করা যায়নি!"

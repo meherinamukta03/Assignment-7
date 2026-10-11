@@ -12,11 +12,11 @@ const ProductGrid = ({ products }: ProductGridProps) => {
 
     const sortedProducts = [...products].sort((a, b) => {
         if (sort === "low-high") {
-            return a.today - b.today;
+            return Number(a.today) - Number(b.today);
         }
 
         if (sort === "high-low") {
-            return b.today - a.today;
+            return Number(b.today) - Number(a.today);
         }
 
         return 0;
@@ -52,15 +52,24 @@ const ProductGrid = ({ products }: ProductGridProps) => {
                 মোট {products.length.toLocaleString("bn-BD")}টি পণ্য দেখানো হচ্ছে
             </p>
 
+           
+           
             {/* RESPONSIVE PRODUCT GRID */}
-            <div className="grid grid-cols-1 gap-3.5 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3">
-                {sortedProducts.map((product) => (
-                    <ProductCard
-                        key={product.id}
-                        product={product}
-                    />
-                ))}
-            </div>
+            {sortedProducts.length > 0 ? (
+                <div className="grid grid-cols-1 gap-3.5 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3">
+                    {sortedProducts.map((product) => (
+                        <ProductCard
+                            key={product.id}
+                            product={product}
+                        />
+                    ))}
+                </div>
+            ) : (
+                <p className="rounded-xl bg-white p-8 text-center text-gray-500">
+                    এই ক্যাটাগরিতে কোনো পণ্য পাওয়া যায়নি।
+                </p>
+            )}
+            
         </div>
     );
 };

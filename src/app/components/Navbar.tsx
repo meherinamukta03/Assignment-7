@@ -55,7 +55,7 @@ export default async function Navbar() {
                                 বাজার দর
                             </h1>
 
-                            <p className="mt-[5px] whitespace-nowrap text-[7px] leading-none text-gray-500 sm:text-[8px] md:text-[9px]">
+                            <p className="mt-[5px] whitespace-nowrap text-[7px] leading-none text-gray-700 sm:text-[8px] md:text-[9px]">
                                 {date}
                             </p>
                         </div>

@@ -75,21 +75,26 @@ export default async function Marquee() {
 
                         <span className="font-medium text-gray-800">
                             {product.today.toLocaleString("bn-BD")} টাকা/
+                            
                             {product.unit === "kg"
                                 ? "কেজি"
                                 : product.unit === "litre"
-                                ? "লিটার"
-                                : product.unit}
+                                    ? "লিটার"
+                                    : product.unit === "dozen"
+                                        ? "ডজন"
+                                        : product.unit === "piece"
+                                            ? "পিস"
+                                            : product.unit}
+                            
                         </span>
 
                         <span
-                            className={`inline-flex shrink-0 items-center gap-1 ${
-                                product.change?.dir === "up"
+                            className={`inline-flex shrink-0 items-center gap-1 ${product.change?.dir === "up"
                                     ? "text-green-600"
                                     : product.change?.dir === "down"
-                                    ? "text-red-600"
-                                    : "text-gray-500"
-                            }`}
+                                        ? "text-red-600"
+                                        : "text-gray-500"
+                                }`}
                         >
                             {product.change?.dir === "up" ? (
                                 <FaArrowUp />

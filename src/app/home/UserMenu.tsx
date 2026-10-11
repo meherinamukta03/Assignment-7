@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { authClient } from "@/lib/auth-client";
 import { FiUser, FiLogOut } from "react-icons/fi";
+import toast from "react-hot-toast";
 
 export default function UserMenu() {
     const { data: session, isPending } = authClient.useSession();
@@ -65,15 +66,23 @@ export default function UserMenu() {
         : "ইউজার";
 
     // Sign out
-    async function handleSignOut() {
-        await authClient.signOut({
-            fetchOptions: {
-                onSuccess: () => {
-                    window.location.href = "/";
-                },
-            },
-        });
+
+async function handleSignOut() {
+    try {
+        const result = await authClient.signOut();
+
+        if (result.error) {
+            toast.error("সাইন আউট করা যায়নি!");
+            return;
+        }
+
+        toast.success("সফলভাবে সাইন আউট হয়েছে!");
+
+        window.location.href = "/";
+    } catch {
+        toast.error("সাইন আউট করার সময় সমস্যা হয়েছে!");
     }
+}
 
     return (
         <div className="relative" ref={dropdownRef}>

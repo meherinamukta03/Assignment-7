@@ -30,7 +30,7 @@ function getUnitText(unit: string) {
             return "লিটার";
         case "dozen":
             return "ডজন";
-        case "pcs":
+        case "piece":
             return "পিস";
         default:
             return unit;
@@ -60,7 +60,7 @@ export default function ProductCard({ product }: ProductCardProps) {
                         {product.nameBn}
                     </h2>
 
-                    <p className="mt-0.5 text-[11px] text-gray-500 sm:text-xs">
+                    <p className="mt-0.5 text-[11px] text-gray-800 sm:text-xs">
                         প্রতি {getUnitText(product.unit)}
                     </p>
                 </div>
@@ -68,7 +68,7 @@ export default function ProductCard({ product }: ProductCardProps) {
 
             <div className="mt-5 flex items-end justify-between">
                 <div>
-                    <span className="mb-0.5 block text-[10px] text-gray-500 sm:text-[11px]">
+                    <span className="mb-0.5 block text-[10px]  text-gray-900 sm:text-[11px]">
                         আজকের দাম
                     </span>
 

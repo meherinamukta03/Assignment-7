@@ -59,13 +59,15 @@ const SignInPage = () => {
         provider: "google" | "github"
     ) => {
         try {
-            const { error } = await authClient.signIn.social({
+            const { data, error } = await authClient.signIn.social({
                 provider,
                 callbackURL: "/",
             });
 
             if (error) {
                 toast.error(error.message || "সাইন ইন করা যায়নি!");
+            } else if (data) {
+                toast.success("সফলভাবে সাইন ইন হয়েছে!");
             }
         } catch (error) {
             console.error(error);

@@ -3,6 +3,7 @@
 
 import ProductGrid from "@/app/components/ProductGrid";
 import type { Product } from "@/app/components/ProductCard";
+import Link from "next/link";
 type Category = {
     id: string;
     slug: string;
@@ -58,11 +59,12 @@ export default async function CategoryPage({
 
     if (!category) {
         return (
-            <div className="min-h-screen bg-[#f3f6f3] flex items-center justify-center">
-                <p className="text-gray-500 font-medium">
-                    ক্যাটাগরি পাওয়া যায়নি!
-                </p>
-            </div>
+            <Link
+                href="/"
+                className="mt-4 inline-block rounded-lg bg-green-700 px-4 py-2 text-white hover:bg-green-800"
+            >
+                হোমে ফিরে যান
+            </Link>
         );
     }
 

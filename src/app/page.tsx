@@ -1,4 +1,4 @@
-import Image from "next/image";
+
 import Hero from "./home/Hero";
 import ProductCard from "./components/ProductCard";
 
@@ -83,7 +83,7 @@ export default async function Home() {
                     মোট {products.length} পণ্য দেখানো হচ্ছে
                 </p>
 
-                <div className="mt-3 grid w-full grid-cols-1 gap-3.5 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3">
+               <div className="mt-3 grid w-full grid-cols-1 gap-3.5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                     {products.map((product) => (
                         <ProductCard
                             key={product.id}
