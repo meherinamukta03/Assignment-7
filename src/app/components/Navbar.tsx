@@ -41,24 +41,23 @@ export default async function Navbar() {
             <div className="mx-auto max-w-7xl">
                 <div className="mx-auto flex h-[66px] max-w-[1020px] items-center justify-between px-3 sm:h-[70px] sm:px-4">
                     {/* Logo, name and date */}
-                    <Link
-                        href="/"
-                        className="flex items-center gap-2 rounded-lg bg-green-600 px-3 py-2 text-white sm:gap-3 sm:px-4"
-                    >
-                        <Image
-                            src="/logo-icon.png"
-                            width={45}
-                            height={45}
-                            alt="বাজার দর"
-                            className="h-9 w-9 sm:h-10 sm:w-10 md:h-11 md:w-11"
-                        />
+                    <Link href="/" className="flex items-center gap-2 sm:gap-3">
+                        <div className="rounded-lg bg-green-600 p-2">
+                            <Image
+                                src="/logo-icon.png"
+                                width={45}
+                                height={45}
+                                alt="বাজার দর"
+                                className="h-9 w-9 sm:h-10 sm:w-10 md:h-11 md:w-11"
+                            />
+                        </div>
 
-                        <div className="flex flex-col justify-center">
-                            <h1 className="text-[15px] leading-none font-bold sm:text-[17px] md:text-[18px]">
+                        <div className="flex h-9 flex-col justify-center sm:h-10 md:h-11">
+                            <h1 className="text-[15px] leading-none font-bold text-gray-900 sm:text-[17px] md:text-[18px]">
                                 বাজার দর
                             </h1>
 
-                            <p className="mt-[5px] whitespace-nowrap text-[7px] leading-none text-white sm:text-[8px] md:text-[9px]">
+                            <p className="mt-[5px] whitespace-nowrap text-[7px] leading-none text-gray-700 sm:text-[8px] md:text-[9px]">
                                 {date}
                             </p>
                         </div>
